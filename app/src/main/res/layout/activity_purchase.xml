@@ -1,19 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/purchase_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:useDefaultMargins="true"
     tools:context="edu.orangecoastcollege.cs273.dtran258.occars.PurchaseActivity">
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/car_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/oc_cars_logo"/>
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/instruction_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_image_view"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/instruction"/>
+
+    <!-- Cash input -->
+
+    <TextView
+        android:id="@+id/car_price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/car_price_edit_text"
+        android:layout_toLeftOf="@+id/car_price_dollar_text_view"
+        android:layout_toStartOf="@+id/car_price_dollar_text_view"
+        android:text="@string/car_price"/>
+
+    <TextView
+        android:id="@+id/car_price_dollar_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/car_price_edit_text"
+        android:layout_toLeftOf="@+id/car_price_edit_text"
+        android:layout_toStartOf="@+id/car_price_edit_text"
+        android:text="@string/dollar_sign"/>
+
+    <EditText
+        android:id="@+id/car_price_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/instruction_text_view"
+        android:ems="10"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/down_payment_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/down_payment_edit_text"
+        android:layout_toLeftOf="@+id/down_payment_dollar_text_view"
+        android:layout_toStartOf="@+id/down_payment_dollar_text_view"
+        android:text="@string/down_payment"/>
+
+    <TextView
+        android:id="@+id/down_payment_dollar_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/down_payment_edit_text"
+        android:layout_toLeftOf="@+id/down_payment_edit_text"
+        android:layout_toStartOf="@+id/down_payment_edit_text"
+        android:text="@string/dollar_sign"/>
+
+    <EditText
+        android:id="@+id/down_payment_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/car_price_edit_text"
+        android:layout_alignRight="@+id/car_price_edit_text"
+        android:layout_below="@+id/car_price_edit_text"
+        android:ems="10"
+        android:inputType="number"/>
+
+    <!-- Loan term input -->
+
+    <RadioGroup
+        android:id="@+id/loan_term_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/down_payment_edit_text"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/three_years_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/years3"/>
+
+        <RadioButton
+            android:id="@+id/four_years_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/years4"/>
+
+        <RadioButton
+            android:id="@+id/five_years_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/years5"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/loan_term_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loan_term_radio_group"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loan_term"/>
+
+    <Button
+        android:id="@+id/loan_report_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loan_report_button_text"
+        android:onClick="reportSummary"/>
+
+</RelativeLayout>
