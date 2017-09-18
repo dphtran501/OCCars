@@ -7,6 +7,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+/**
+ * This activity allows the user to input information about their car loan, specifically the price
+ * of the car, the down payment on the car, and the loan term. The information can then be passed to
+ * <code>LoanSummaryActivity</code> for calculations.
+ *
+ * @author Derek Tran
+ * @version 1.0
+ * @since September 14, 2017
+ */
 public class PurchaseActivity extends AppCompatActivity
 {
 
@@ -20,6 +29,13 @@ public class PurchaseActivity extends AppCompatActivity
     // Connection to the MODEL
     private CarLoan mCarLoan = new CarLoan();
 
+    /**
+     * Initializes <code>PurchaseActivity</code> by inflating its UI.
+     *
+     * @param savedInstanceState Bundle containing the data it recently supplied in
+     *                           onSaveInstanceState(Bundle) if activity was reinitialized after
+     *                           being previously shut down. Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,16 +60,26 @@ public class PurchaseActivity extends AppCompatActivity
         else mCarLoan.setTerm(5);
     }
 
+    /**
+     * Retrieves data input from this activity, sends the data to <code>LoanSummaryActivity</code>,
+     * and launches <code>LoanSummaryActivity</code>.
+     *
+     * @param view The <code>View</code> that called this method.
+     */
     protected void reportSummary(View view)
     {
         collectCarLoanData();
-        String report = "Monthly Payment: $" + mCarLoan.getMonthlyPayment();
-        // TODO: Keep going, more to report!!!
+        StringBuilder reportSB = new StringBuilder(R.string.report_line1);
+        reportSB.append(mCarLoan.getMonthlyPayment()).append(R.string.report_line2).append(mCarLoan.getPrice()).append(R.string.report_line3).append(mCarLoan.getTaxAmount()).append(R.string.report_line4).append(mCarLoan.getTotalAmount()).append(R.string.report_line5).append(mCarLoan.getDownPayment()).append(R.string.report_line6).append(mCarLoan.getBorrowedAmount()).append(R.string.report_line7).append(mCarLoan.getInterestAmount()).append(R.string.report_line8).append(mCarLoan.getTerm()).append(" years.");
+
+        StringBuilder noteSB = new StringBuilder(R.string.report_line9);
+        noteSB.append(R.string.report_line10).append(R.string.report_line11).append(R.string.report_line12);
 
         // Intents start new activities and can share data with them
         Intent launchLoanSummary = new Intent(this, LoanSummaryActivity.class);
         // Put data into the Intent for Loan Summary to receive
-        launchLoanSummary.putExtra("loanReport", report);
+        launchLoanSummary.putExtra("loanReport", reportSB.toString());
+        launchLoanSummary.putExtra("loanNote", noteSB.toString());
         // Start second activity
         startActivity(launchLoanSummary);
     }

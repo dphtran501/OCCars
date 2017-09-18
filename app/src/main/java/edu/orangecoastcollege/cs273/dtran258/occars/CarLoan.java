@@ -21,12 +21,6 @@ public class CarLoan
     private int mTerm;
 
     /**
-     * Instantiates a new <code>CarLoan</code> object with the car price, down payment, and loan
-     * term initialized to zero.
-     */
-    public CarLoan() {}
-
-    /**
      * Gets the price of the car.
      * @return The price of the car.
      */

@@ -29,16 +29,16 @@
         android:textColor="@color/bone_white"/>
 
     <TextView
-        android:id="@+id/monthly_payment_text_view"
+        android:id="@+id/loan_report_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loan_summary_text_view"/>
 
     <TextView
-        android:id="@+id/loan_report_text_view"
+        android:id="@+id/loan_note_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/monthly_payment_text_view"/>
+        android:layout_below="@+id/loan_report_text_view"/>
 
     <Button
         android:id="@+id/return_button"
