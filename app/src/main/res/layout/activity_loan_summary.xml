@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/purchase_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.orangecoastcollege.cs273.dtran258.occars.LoanSummaryActivity">
+    tools:context="edu.orangecoastcollege.cs273.dtran258.occars.PurchaseActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/car_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/oc_cars_logo"/>
+
+    <TextView
+        android:id="@+id/loan_summary_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/car_image_view"
+        android:layout_centerHorizontal="true"
+        android:background="@color/steel_blue"
+        android:gravity="center"
+        android:text="@string/loan_summary"
+        android:textColor="@color/bone_white"/>
+
+    <TextView
+        android:id="@+id/monthly_payment_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loan_summary_text_view"/>
+
+    <TextView
+        android:id="@+id/loan_report_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/monthly_payment_text_view"/>
+
+    <Button
+        android:id="@+id/return_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/view_margins"
+        android:onClick="reportSummary"
+        android:text="@string/go_data_entry"/>
+
+</RelativeLayout>

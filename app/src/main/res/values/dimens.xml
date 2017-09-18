@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_margins">10dp</dimen>
+    <dimen name="radio_group_margin_top">20dp</dimen>
+    <dimen name="radio_group_padding">10dp</dimen>
+    <dimen name="elevation">4dp</dimen>
+</resources>
