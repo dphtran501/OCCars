@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/instruction_text_view"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/car_image_view"
         android:layout_centerHorizontal="true"
@@ -62,7 +62,7 @@
         android:layout_marginEnd="@dimen/view_margins"
         android:layout_marginRight="@dimen/view_margins"
         android:elevation="@dimen/elevation"
-        android:ems="6"
+        android:ems="4"
         android:inputType="number"/>
 
     <TextView
@@ -91,7 +91,7 @@
         android:layout_alignRight="@+id/car_price_edit_text"
         android:layout_below="@+id/car_price_edit_text"
         android:elevation="@dimen/elevation"
-        android:ems="6"
+        android:ems="4"
         android:inputType="number"/>
 
     <!-- Loan term input -->

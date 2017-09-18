@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/purchase_activity_layout"
+    android:id="@+id/loan_summary_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.orangecoastcollege.cs273.dtran258.occars.PurchaseActivity">
+    tools:context="edu.orangecoastcollege.cs273.dtran258.occars.LoanSummaryActivity">
 
 
     <ImageView

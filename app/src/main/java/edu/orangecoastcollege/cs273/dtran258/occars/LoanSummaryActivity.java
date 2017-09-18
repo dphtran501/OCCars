@@ -51,7 +51,7 @@ public class LoanSummaryActivity extends AppCompatActivity
      * Launches <code>PurchaseActivity</code>.
      * @param view The <code>View</code> that called this method.
      */
-    protected void enterData(View view)
+    public void enterData(View view)
     {
         Intent launchPurchase = new Intent(this, PurchaseActivity.class);
         startActivity(launchPurchase);
