@@ -80,7 +80,7 @@ public class CarLoan
      */
     public double getBorrowedAmount()
     {
-        return mPrice - mDownPayment;
+        return getTotalAmount() - mDownPayment;
     }
 
     /**

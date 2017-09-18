@@ -32,13 +32,21 @@
         android:id="@+id/loan_report_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loan_summary_text_view"/>
+        android:layout_below="@+id/loan_summary_text_view"
+        android:layout_marginEnd="@dimen/view_margins"
+        android:layout_marginLeft="@dimen/view_margins"
+        android:layout_marginRight="@dimen/view_margins"
+        android:layout_marginStart="@dimen/view_margins"/>
 
     <TextView
         android:id="@+id/loan_note_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loan_report_text_view"/>
+        android:layout_below="@+id/loan_report_text_view"
+        android:layout_marginEnd="@dimen/view_margins"
+        android:layout_marginLeft="@dimen/view_margins"
+        android:layout_marginRight="@dimen/view_margins"
+        android:layout_marginStart="@dimen/view_margins"/>
 
     <Button
         android:id="@+id/return_button"

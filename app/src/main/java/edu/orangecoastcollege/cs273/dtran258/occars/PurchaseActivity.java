@@ -74,7 +74,7 @@ public class PurchaseActivity extends AppCompatActivity
     {
         collectCarLoanData();
 
-        String report = getResources().getString(R.string.report_line1) + currency.format(mCarLoan.getMonthlyPayment())
+        String report = getResources().getText(R.string.report_line1).toString() + currency.format(mCarLoan.getMonthlyPayment())
                 + getResources().getString(R.string.report_line2) + currency.format(mCarLoan.getPrice())
                 + getResources().getString(R.string.report_line3) + currency.format(mCarLoan.getTaxAmount())
                 + getResources().getString(R.string.report_line4) + currency.format(mCarLoan.getTotalAmount())
