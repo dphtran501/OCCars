@@ -47,7 +47,7 @@ public class PurchaseActivity extends AppCompatActivity
     protected void reportSummary(View view)
     {
         collectCarLoanData();
-        String report = "Monthly Payment: $" + mCarLoan.monthlyPayment();
+        String report = "Monthly Payment: $" + mCarLoan.getMonthlyPayment();
         // TODO: Keep going, more to report!!!
 
         // Intents start new activities and can share data with them
