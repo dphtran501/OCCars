@@ -47,7 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/view_margins"
-        android:onClick="reportSummary"
+        android:onClick="enterData"
         android:text="@string/go_data_entry"/>
 
 </RelativeLayout>
