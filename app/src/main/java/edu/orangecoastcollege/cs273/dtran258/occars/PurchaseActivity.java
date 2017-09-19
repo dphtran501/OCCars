@@ -1,6 +1,7 @@
 package edu.orangecoastcollege.cs273.dtran258.occars;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -74,19 +75,20 @@ public class PurchaseActivity extends AppCompatActivity
     {
         collectCarLoanData();
 
-        String report = getResources().getText(R.string.report_line1).toString() + currency.format(mCarLoan.getMonthlyPayment())
-                + getResources().getString(R.string.report_line2) + currency.format(mCarLoan.getPrice())
-                + getResources().getString(R.string.report_line3) + currency.format(mCarLoan.getTaxAmount())
-                + getResources().getString(R.string.report_line4) + currency.format(mCarLoan.getTotalAmount())
-                + getResources().getString(R.string.report_line5) + currency.format(mCarLoan.getDownPayment())
-                + getResources().getString(R.string.report_line6) + currency.format(mCarLoan.getBorrowedAmount())
-                + getResources().getString(R.string.report_line7) + currency.format(mCarLoan.getInterestAmount())
-                + getResources().getString(R.string.report_line8) + String.valueOf(mCarLoan.getTerm()) + " years.";
+        Resources res = getResources();
+        String report = res.getString(R.string.report_line1, "Monthly Payment:", currency.format(mCarLoan.getMonthlyPayment()))
+                + res.getString(R.string.report_line2, "Car Sticker Price:", currency.format(mCarLoan.getPrice()))
+                + res.getString(R.string.report_line3, "Tax Amount:", currency.format(mCarLoan.getTaxAmount()))
+                + res.getString(R.string.report_line4, "Your Cost:", currency.format(mCarLoan.getTotalAmount()))
+                + res.getString(R.string.report_line5, "You will put down:", currency.format(mCarLoan.getDownPayment()))
+                + res.getString(R.string.report_line6, "Borrowed Amount:", currency.format(mCarLoan.getBorrowedAmount()))
+                + res.getString(R.string.report_line7, "Interest Amount:", currency.format(mCarLoan.getInterestAmount()))
+                + res.getString(R.string.report_line8, mCarLoan.getTerm());
 
-        String note = getResources().getString(R.string.report_line9)
-                + getResources().getString(R.string.report_line10)
-                + getResources().getString(R.string.report_line11)
-                + getResources().getString(R.string.report_line12);
+        String note = res.getString(R.string.report_line9)
+                + res.getString(R.string.report_line10)
+                + res.getString(R.string.report_line11)
+                + res.getString(R.string.report_line12);
 
         // Intents start new activities and can share data with them
         Intent launchLoanSummary = new Intent(this, LoanSummaryActivity.class);

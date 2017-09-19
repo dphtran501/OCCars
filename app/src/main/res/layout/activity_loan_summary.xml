@@ -36,7 +36,8 @@
         android:layout_marginEnd="@dimen/view_margins"
         android:layout_marginLeft="@dimen/view_margins"
         android:layout_marginRight="@dimen/view_margins"
-        android:layout_marginStart="@dimen/view_margins"/>
+        android:layout_marginStart="@dimen/view_margins"
+        android:fontFamily="monospace"/>
 
     <TextView
         android:id="@+id/loan_note_text_view"
